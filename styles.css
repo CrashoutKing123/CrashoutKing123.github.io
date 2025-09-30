@@ -1,0 +1,37 @@
+html {
+    --text: rgb(255, 255, 255);
+    --background: rgb(0, 0, 0);
+    --primary: rgb(13, 65, 65);
+    --secondary: darkgreen;
+    --accent: rgba(53, 104, 104, 0.575);
+    --anotha1: rgb(95, 3, 95);
+}
+
+body {
+    color: var(--text);
+    background: var(--background);
+}
+
+h1 {
+    color: var(--secondary);
+}
+
+h2 {
+    color: var(--anotha1);
+}
+
+h3 {
+    color: var(--secondary);
+}
+
+h4 {
+    color: var(--anotha1);
+}
+
+h5 {
+    color: var(--secondary);
+}
+
+h6 {
+    color: var(--anotha1);
+}
