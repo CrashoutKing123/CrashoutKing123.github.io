@@ -4,13 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 </head>
 <a href="index.html">Home Page</a>
 <body>
-    
+<h1>Michael Jordan Clicker</h1>
+<img src="Michael_jordan_crying_is_my_GOAT.jpg" alt="Michael Jordan Clicker" width="350 height="250">
+<p>Points: <span id="points">0</span></p>
+<button id="resetButton">Reset Points</button>
+<script>
+    let points = 0;
+    const pointsDisplay = document.getElementById('points');
+    const resetButton = document.getElementById('resetButton')
+    const image = document.querySelector('img');
+
+    image.addEventListener('click', () => {
+        points++;
+        pointsDisplay.textContent = points;
+    });
+
+    resetButton.addEventListener('click', () => {
+        points = 0;
+        pointsDisplay.textContent = points;
+    });
+</script>
 </body>
 </html>
