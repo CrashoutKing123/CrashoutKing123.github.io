@@ -10,10 +10,11 @@
     <section>
         <div class="main">
             <div class="left">
-                <h3>Points: <span class="point-cost">0</span></h3>
+                <h3>Points: <span class="point-cost">2000</span></h3>
                 <img src="./real_mj_crying.png" alt="" srcset="" class="MJ-image" onclick="incrementPoints()" draggable="false">
             </div>
             <div class="right">
+
                 <div class="upgrade" onclick="buyRoty()">
                     <div class="left-section">
                         <img src="./nba-roty-trophy.png" alt="" class="upgrade-img">
@@ -25,10 +26,56 @@
                             <img src="./real_mj_crying.png" alt="" class="MJ-img">
                         </div>
                     </div>
-                    <div class="right-section">
-                        Level 0
+                    <div class="right-section">Level <span class="roty-level">0</span></div>
+
+                    <div class="next-level-info">
+                        <p>
+                            +<span class="roty-increase">0.1</span> points <br /> per second
+                        </p>
                     </div>
                 </div>
+
+                <div class="upgrade" onclick="buySt()">
+                    <div class="left-section">
+                        <img src="./scoring-title.png" alt="" class="upgrade-img-st">
+                    </div>
+                    <div class="mid-section">
+                        <div class="upgrade-text-st"><h4>Scoring Title</h4></div>
+                        <div class="cost-info">
+                            <div class="upgrade-text-st"><p>Cost: <span class="st-Cost">100</span></p></div>
+                            <img src="./real_mj_crying.png" alt="" class="upgrade-MJ-st">
+                        </div>
+                    </div>
+                    <div class="right-section">Level <span class="st-level">0</span></div>
+
+                    <div class="next-level-info">
+                        <p>
+                            +<span class="st-increase">1</span> points <br /> per second
+                        </p>
+                    </div>
+                </div>
+
+                
+                <div class="upgrade" onclick="buyAsmvp()">
+                    <div class="left-section">
+                        <img src="./asmvp_trophy.png" alt="" class="upgrade-img">
+                    </div>
+                    <div class="mid-section">
+                        <div class="upgrade-text"><h4>All-Star MVP</h4></div>
+                        <div class="cost-info">
+                            <div class="upgrade-text"><p>Cost: <span class="asmvp-Cost">1100</span></p></div>
+                            <img src="./real_mj_crying.png" alt="" class="MJ-img">
+                        </div>
+                    </div>
+                    <div class="right-section">Level <span class="asmvp-level">0</span></div>
+
+                    <div class="next-level-info">
+                        <p>
+                            +<span class="asmvp-increase">8</span> points <br /> per second
+                        </p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
