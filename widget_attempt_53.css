@@ -1,0 +1,69 @@
+body {
+    display: grid;
+    place-items:center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #2C2C2C;
+    color: white;
+    user-select: none;
+}
+
+.main {
+    display: flex;
+    gap: 200px;
+}
+
+.left h3 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.MJ-image {
+    width: 300px
+}
+
+.MJ-image:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.MJ-image:active {
+    opacity: 0.8;
+    transform: scale(1.02);
+}
+
+.upgrade {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 330px;
+    height: 60px;
+    border: 4px solid white;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.mid-section h4 {
+    margin: 0;
+}
+
+.mid-section p {
+    margin: 0;
+}
+
+.upgrade-img {
+    width: 55px;
+}
+
+.MJ-img {
+    width: 20px;
+    height: 25px;
+}
+
+.cost-info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
