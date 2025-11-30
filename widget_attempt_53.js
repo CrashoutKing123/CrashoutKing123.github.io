@@ -19,6 +19,7 @@ let asmvpLevel = document.querySelector('.asmvp-level')
 let asmvpIncrease = document.querySelector('.asmvp-increase')
 let parsedAsmvpIncrease = parseFloat(asmvpIncrease.innerHTML)
 
+let ppsText = document.getElementById("pps-text")
 
 let pps = 0;
 
@@ -45,11 +46,6 @@ function buyRoty() {
         
     }
 }
-
-setInterval(() => {
-    parsedPoint += pps / 10
-    point.innerHTML = Math.round(parsedPoint)
-}, 100)
 
 function buySt() {
     if (parsedPoint >= parsedStCost) {
@@ -82,3 +78,9 @@ function buyAsmvp() {
         point.innerHTML = Math.round(point.innerHTML)
     }
 }
+
+setInterval(() => {
+    parsedPoint += pps / 10
+    point.innerHTML = Math.round(parsedPoint)
+    ppsText.innerHTML = Math.round(pps*10)/10
+}, 100)
