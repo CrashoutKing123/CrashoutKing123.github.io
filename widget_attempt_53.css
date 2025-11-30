@@ -113,7 +113,7 @@ body {
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     left: 50%;
-    transform: translate(-50%)
+    transform: translate(-100%)
 }
 
 .texts {
