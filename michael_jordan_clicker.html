@@ -12,8 +12,9 @@
 <body>
 <h1>Michael Jordan Clicker</h1>
 <img src="Michael_jordan_crying_is_my_GOAT.jpg" alt="Michael Jordan Clicker" width="350 height="250">
+<p>Points Per Second: <span id="PPS">0</span></p>
 <p>Points: <span id="points">0</span></p>
-<button id="resetButton">Reset Points</button>
+<button id="resetButton">Reset Game</button>
 <script>
     let points = 0;
     const pointsDisplay = document.getElementById('points');
@@ -43,11 +44,47 @@
 <div class="coolShop">
 <button id="ROTY">Rookie of the Year (Costs 15 Points)</button>
 <button id="DPOY">Defensive Player of the Year (Costs 100 Points)</button>
-<button id="ST">Scoring Title (Costs 500 Points)</button>
-<button id="ASMVP">All Star MVP (Costs 1,200 Points)</button>
-<button id="MVP">Most Valuable Player (Costs 2,500 Points)</button>
-<button id="Chip">Championship (Costs 4,500 Points)</button>
-<button id="FMVP">Finals MVP (Costs 10,000 Points)</button>
+<button id="ST">Scoring Title (Costs 1,100 Points)</button>
+<button id="ASMVP">All Star MVP (Costs 12,000 Points)</button>
+<button id="MVP">Most Valuable Player (Costs 130,000 Points)</button>
+<button id="CHIP">Championship (Costs 1.4M Points)</button>
+<button id="FMVP">Finals MVP (Costs 20M Points)</button>
 </div>
+<script>
+    ROTY.addEventListener('click', () => {
+        points = points - 15;
+        pointsDisplay.textContent = points;
+    });
+
+    DPOY.addEventListener('click', () => {
+        points = points - 100;
+        pointsDisplay.textContent = points;
+    });
+
+    ST.addEventListener('click', () => {
+        points = points - 1100;
+        pointsDisplay.textContent = points;
+    });
+
+    ASMVP.addEventListener('click', () => {
+        points = points - 12000;
+        pointsDisplay.textContent = points;
+    });
+
+    MVP.addEventListener('click', () => {
+        points = points - 130000;
+        pointsDisplay.textContent = points;
+    });
+
+    CHIP.addEventListener('click', () => {
+        points = points - 1400000;
+        pointsDisplay.textContent = points;
+    });
+
+    FMVP.addEventListener('click', () => {
+        points = points - 20000000;
+        pointsDisplay.textContent = points;
+    });
+</script>
 </body>
 </html>
