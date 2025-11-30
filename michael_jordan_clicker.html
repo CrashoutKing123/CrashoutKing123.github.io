@@ -11,20 +11,15 @@
 <a href="index.html">Home Page</a>
 <body>
 <h1>Michael Jordan Clicker</h1>
-<img src="Michael_jordan_crying_is_my_GOAT.jpg" alt="Michael Jordan Clicker" width="350 height="250">
+<img src="Michael_jordan_crying_is_my_GOAT.jpg" alt="Michael Jordan Clicker" width="350 height="250" class="MJ-image" onclick="incrementPoints()">
 <p>Points Per Second: <span id="PPS">0</span></p>
-<p>Points: <span id="points">0</span></p>
+<p>Points: <span id="points" class="point-cost">0</span></p>
 <button id="resetButton">Reset Game</button>
 <script>
     let points = 0;
     const pointsDisplay = document.getElementById('points');
     const resetButton = document.getElementById('resetButton')
     const image = document.querySelector('img');
-
-    image.addEventListener('click', () => {
-        points++;
-        pointsDisplay.textContent = points;
-    });
 
     resetButton.addEventListener('click', () => {
         points = 0;
@@ -42,7 +37,7 @@
 </style>
 <p><b><u>Shop:</u></b></p>
 <div class="coolShop">
-<button id="ROTY">Rookie of the Year (Costs 15 Points)</button>
+<button id="ROTY">Rookie of the Year (Cost: <span class="clicker-cost">15</span> points)</button>
 <button id="DPOY">Defensive Player of the Year (Costs 100 Points)</button>
 <button id="ST">Scoring Title (Costs 1,100 Points)</button>
 <button id="ASMVP">All Star MVP (Costs 12,000 Points)</button>
@@ -50,39 +45,15 @@
 <button id="CHIP">Championship (Costs 1.4M Points)</button>
 <button id="FMVP">Finals MVP (Costs 20M Points)</button>
 </div>
+<script src="mj_clicker.js"></script>
+<script>
+    ROTY.addEventListener('click', () => {
+        buyClicker()
+    });
+</script>
 <script>
     ROTY.addEventListener('click', () => {
         points = points - 15;
-        pointsDisplay.textContent = points;
-    });
-
-    DPOY.addEventListener('click', () => {
-        points = points - 100;
-        pointsDisplay.textContent = points;
-    });
-
-    ST.addEventListener('click', () => {
-        points = points - 1100;
-        pointsDisplay.textContent = points;
-    });
-
-    ASMVP.addEventListener('click', () => {
-        points = points - 12000;
-        pointsDisplay.textContent = points;
-    });
-
-    MVP.addEventListener('click', () => {
-        points = points - 130000;
-        pointsDisplay.textContent = points;
-    });
-
-    CHIP.addEventListener('click', () => {
-        points = points - 1400000;
-        pointsDisplay.textContent = points;
-    });
-
-    FMVP.addEventListener('click', () => {
-        points = points - 20000000;
         pointsDisplay.textContent = points;
     });
 </script>
