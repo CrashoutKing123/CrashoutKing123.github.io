@@ -19,6 +19,30 @@ let asmvpLevel = document.querySelector('.asmvp-level')
 let asmvpIncrease = document.querySelector('.asmvp-increase')
 let parsedAsmvpIncrease = parseFloat(asmvpIncrease.innerHTML)
 
+let omCost = document.querySelector('.om-Cost')
+let parsedOmCost = parseFloat(omCost.innerHTML)
+let omLevel = document.querySelector('.om-level')
+let omIncrease = document.querySelector('.om-increase')
+let parsedOmIncrease = parseFloat(omIncrease.innerHTML)
+
+let mvpCost = document.querySelector('.mvp-Cost')
+let parsedMvpCost = parseFloat(mvpCost.innerHTML)
+let mvpLevel = document.querySelector('.mvp-level')
+let mvpIncrease = document.querySelector('.mvp-increase')
+let parsedMvpIncrease = parseFloat(mvpIncrease.innerHTML)
+
+let chipCost = document.querySelector('.chip-Cost')
+let parsedChipCost = parseFloat(chipCost.innerHTML)
+let chipLevel = document.querySelector('.chip-level')
+let chipIncrease = document.querySelector('.chip-increase')
+let parsedChipIncrease = parseFloat(chipIncrease.innerHTML)
+
+let fmvpCost = document.querySelector('.fmvp-Cost')
+let parsedFmvpCost = parseFloat(chipCost.innerHTML)
+let fmvpLevel = document.querySelector('.fmvp-level')
+let fmvpIncrease = document.querySelector('.fmvp-increase')
+let parsedFmvpIncrease = parseFloat(fmvpIncrease.innerHTML)
+
 let ppsText = document.getElementById("pps-text")
 
 let pps = 0;
@@ -75,6 +99,70 @@ function buyAsmvp() {
 
         parsedAsmvpCost *= 1.15;
         asmvpCost.innerHTML = Math.round(parsedAsmvpCost)
+        point.innerHTML = Math.round(point.innerHTML)
+    }
+}
+
+function buyOm() {
+    if (parsedPoint >= parsedOmCost) {
+        point.innerHTML = Math.round(parsedPoint -= parsedOmCost);
+
+        omLevel.innerHTML ++
+
+        parsedOmIncrease = parseFloat((parsedOmIncrease * 1).toFixed(2))
+        omIncrease.innerHTML = parsedOmIncrease
+        pps += parsedOmIncrease
+
+        parsedOmCost *= 1.15;
+        omCost.innerHTML = Math.round(parsedOmCost)
+        point.innerHTML = Math.round(point.innerHTML)
+    }
+}
+
+function buyMvp() {
+    if (parsedPoint >= parsedMvpCost) {
+        point.innerHTML = Math.round(parsedPoint -= parsedMvpCost);
+
+        mvpLevel.innerHTML ++
+
+        parsedMvpIncrease = parseFloat((parsedMvpIncrease * 1).toFixed(2))
+        mvpIncrease.innerHTML = parsedMvpIncrease
+        pps += parsedMvpIncrease
+
+        parsedMvpCost *= 1.15;
+        mvpCost.innerHTML = Math.round(parsedMvpCost)
+        point.innerHTML = Math.round(point.innerHTML)
+    }
+}
+
+function buyChip() {
+    if (parsedPoint >= parsedChipCost) {
+        point.innerHTML = Math.round(parsedPoint -= parsedChipCost);
+
+        chipLevel.innerHTML ++
+
+        parsedChipIncrease = parseFloat((parsedChipIncrease * 1).toFixed(2))
+        chipIncrease.innerHTML = parsedChipIncrease
+        pps += parsedChipIncrease
+
+        parsedChipCost *= 1.15;
+        chipCost.innerHTML = Math.round(parsedChipCost)
+        point.innerHTML = Math.round(point.innerHTML)
+    }
+}
+
+function buyFmvp() {
+    if (parsedPoint >= parsedFmvpCost) {
+        point.innerHTML = Math.round(parsedPoint -= parsedFmvpCost);
+
+        fmvpLevel.innerHTML ++
+
+        parsedFmvpIncrease = parseFloat((parsedFmvpIncrease * 1).toFixed(2))
+        fmvpIncrease.innerHTML = parsedFmvpIncrease
+        pps += parsedFmvpIncrease
+
+        parsedFmvpCost *= 1.15;
+        fmvpCost.innerHTML = Math.round(parsedFmvpCost)
         point.innerHTML = Math.round(point.innerHTML)
     }
 }
