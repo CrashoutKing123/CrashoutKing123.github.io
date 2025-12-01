@@ -168,7 +168,7 @@ function buyFmvp() {
 }
 
 setInterval(() => {
-    parsedPoint += pps / 10
+    parsedPoint += pps / 100
     point.innerHTML = Math.round(parsedPoint)
     ppsText.innerHTML = Math.round(pps*10)/10
-}, 100)
+}, 10)
