@@ -167,6 +167,25 @@ function buyFmvp() {
     }
 }
 
+resetButton.addEventListener('click', () => {
+    point = 0
+    pps = 0
+    rotyCost = 15
+    stCost = 100
+    asmvpCost = 1100
+    omCost = 12000
+    mvpCost = 130000
+    chipCost = 1400000
+    fmvpCost = 20000000
+    rotyLevel = 0
+    stLevel = 0
+    asmvpLevel = 0
+    omLevel = 0
+    mvpLevel = 0
+    chipLevel = 0
+    fmvpLevel = 0
+});
+
 setInterval(() => {
     parsedPoint += pps / 100
     point.innerHTML = Math.round(parsedPoint)
