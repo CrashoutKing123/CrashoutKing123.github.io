@@ -168,7 +168,7 @@ function buyFmvp() {
 }
 
 resetButton.addEventListener('click', () => {
-    point = 0
+    parsedPointoint = 0
     pps = 0
     rotyCost = 15
     stCost = 100
@@ -187,7 +187,7 @@ resetButton.addEventListener('click', () => {
 });
 
 setInterval(() => {
-    parsedPoint += pps / 100
+    parsedPoint += pps / 1000
     point.innerHTML = Math.round(parsedPoint)
     ppsText.innerHTML = Math.round(pps*10)/10
-}, 10)
+}, 1)
