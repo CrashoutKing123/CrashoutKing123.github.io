@@ -1,8 +1,3 @@
-const nameInput = document.getElementById("nameInput");
-const colorInput = document.getElementById("colorInput");
-
-let bgColor = colorInput
-
 let point = document.querySelector('.point-cost')
 let parsedPoint = parseFloat(point.innerHTML)
 
