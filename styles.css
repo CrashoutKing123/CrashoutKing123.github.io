@@ -1,14 +1,10 @@
-* {
-    /* border: 1px solid red; */
-}
-
 html {
     --text: rgb(255, 255, 255);
-    --background: rgb(0, 0, 0);
-    --primary: rgb(13, 65, 65);
-    --secondary: darkgreen;
-    --accent: rgba(53, 104, 104, 0.575);
-    --anotha1: rgb(95, 3, 95);
+    --background: rgb(255, 248, 229);
+    --primary: rgb(95, 162, 179);
+    --secondary: rgb(95, 162, 179);
+    --accent: rgb(95, 162, 179);
+    --anotha1: rgb(95, 162, 179);
 }
 
 body {
@@ -48,4 +44,42 @@ h1 {
 
 *{
     font-family: "Fira Sans", sans-serif;
+}
+
+:link {
+    color: rgb(119, 205, 226);
+    font-size: 10pt
+}
+
+:link.hover {
+    opacity: 0.9;
+}
+
+:link.active {
+    opacity: 0.8;
+    transform: scale(1.02);
+}
+
+:visited {
+    color:  rgb(119, 205, 226);
+}
+
+.guitar {
+    height: 150px;
+    width: auto;
+}
+
+.links {
+    font-size: 1em;
+    transition: transform 0.3s ease-in-out;
+}
+
+.links:hover {
+    transform: scale(1.3);
+}
+
+.the_links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
