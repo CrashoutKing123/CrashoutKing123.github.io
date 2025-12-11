@@ -105,3 +105,15 @@ h1 {
     width: auto;
     transform: translate(-15px, -40px)
 }
+
+.dog {
+    height: 150px;
+    width: auto;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.dog:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}

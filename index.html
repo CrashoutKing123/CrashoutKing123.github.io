@@ -14,7 +14,9 @@
 <body>
     <nav class="the_links">
         <h3 class="the_word_links"><u>Links: </u></h3>
-        <ul> <li class="links"><a href="class_links.html" class="links">Class Links</a></li>
+        <ul> 
+            <li class="links"><a href="my_hobbies.html">My Hobbies</a></li>
+            <li class="links"><a href="class_links.html" class="links">Class Links</a></li>
             <li class="links"><a href="cool_balloon.html">Cool Balloon</a></li>
             <li class="links"><a href="input_elements_challenge.html">Input elements challenge</a></li>
             <li class="links"><a href="widget_attempt_53.html">Michael Jordan Clicker</a></li>
@@ -24,9 +26,20 @@
     <h1>My Personal Website</h1>
     <h2> <u>Who Am I?</u>
         <h3>My name is Benjamin. I'm currently taking a Computer Programming class and this is our first project. I'm obviously not going to give away too much information about myself on the internet because that would be a horrible idea.</h3>
-    </h2>
-    <h2><a href="my_hobbies.html">My Hobbies</a></h2> 
-    <img src="arrow.png" alt="" srcset="" class="arrow">
+    </h2> 
+    <img src="dog_image.jpg" alt="" srcset="" id="spinImg" class="dog" draggable="false">
+    <script>
+        let isSpinning = false;
+        document.getElementById('spinImg').addEventListener('click', function() {
+            if (isSpinning) {
+                this.style.transform = 'rotate(0deg)';
+            } else {
+                this.style.transform = 'rotate(360deg)';
+            }
+            isSpinning = !isSpinning;
+        });
+    </script>
+    <h3>Click the Dog!</h3>
 </body>
 <audio controls autoplay></audio>
 <source src="BeepBox-Song.wav" type="audio/wav">
