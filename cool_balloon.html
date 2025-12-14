@@ -8,28 +8,91 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-
 </head>
-<a href="index.html">Home Page</a>
+<div class="balloon-page">
+  <a href="index.html" id="topLink"><u>Home Page</u></a>
 <body>
-    <p id="balloon">🎈</p>
+    <p id="balloon" style="font-size: 50px">🎈</p>
+
+    <audio src="balloon-inflate.mp3" id="inflate-sound"></audio>
+    <audio src="balloon-deflate.mp3" id="deflate-sound"></audio>
+    <audio src="balloon-pop.mp3" id="pop-sound"></audio>
+
+    <button id="resetBtn">Reset</button>
+
+<div id="scoreBoard">
+    <p id="currentScore">Current Score: 50</p>
+    <p id="bestScore">Best Score: 0</p>
+</div>
+
 
 <script>
-  let balloonEl = document.getElementById("balloon");
-  let fontSize = 10;
-function handleKeyDown(event) {
-  if (event.key == "ArrowUp") {
-    fontSize *= 1.1;
-    balloonEl.style.fontSize = fontSize + "px";
-    event.preventDefault();
-  }
-  if (event.key == "ArrowDown") {
-    fontSize /= 1.1;
-    balloonEl.style.fontSize = fontSize + "px";
-    event.preventDefault();
-  }
+const balloon = document.getElementById('balloon');
+const inflateSound = document.getElementById('inflate-sound');
+const deflateSound = document.getElementById('deflate-sound');
+const popSound = document.getElementById('pop-sound');
+const resetBtn = document.getElementById('resetBtn');
+const currentScoreEl = document.getElementById('currentScore');
+const bestScoreEl = document.getElementById('bestScore');
+
+let fontSize = 50;
+const minSize = 10;
+let maxSize = getRandomMaxSize(); // random max size
+let bestScore = 0;
+
+// Function to generate a random max size between 150px and 300px
+function getRandomMaxSize() {
+    return Math.floor(Math.random() * (300 - 150 + 1)) + 150;
 }
-window.addEventListener("keydown", handleKeyDown);
+
+// Update score display
+function updateScoreDisplay() {
+    currentScoreEl.textContent = `Current Score: ${fontSize}`;
+    bestScoreEl.textContent = `Best Score: ${bestScore}`;
+}
+
+// Initial display
+updateScoreDisplay();
+
+document.addEventListener('keydown', (e) => {
+    if (balloon.textContent === '💥') return; // already popped
+
+    if (e.key === 'ArrowUp') {
+        fontSize += 10;
+        if (fontSize >= maxSize) {
+            balloon.textContent = '💥';
+            popSound.currentTime = 0;
+            popSound.play();
+
+            // Update best score
+            if (fontSize > bestScore) {
+                bestScore = fontSize;
+            }
+        } else {
+            balloon.style.fontSize = fontSize + 'px';
+            inflateSound.currentTime = 0;
+            inflateSound.play();
+        }
+    } else if (e.key === 'ArrowDown') {
+        fontSize -= 10;
+        if (fontSize < minSize) fontSize = minSize;
+        balloon.style.fontSize = fontSize + 'px';
+        deflateSound.currentTime = 0;
+        deflateSound.play();
+    }
+
+    updateScoreDisplay();
+});
+
+// Reset button
+resetBtn.addEventListener('click', () => {
+    fontSize = 50;
+    balloon.style.fontSize = fontSize + 'px';
+    balloon.textContent = '🎈';
+    maxSize = getRandomMaxSize(); // new random max size
+    updateScoreDisplay();
+});
 </script>
 </body>
+</div>
 </html>
