@@ -215,3 +215,41 @@ h1 {
     text-align: center;
     z-index: 1000;        
 }
+
+.roulette-container {
+    background: #222;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.roulette-container {
+    text-align: center;
+}
+
+canvas {
+    border: 5px solid #555;
+    border-radius: 50%;
+    background: #333;
+    margin-bottom: 20px;
+}
+
+.controls {
+    margin-top: 10px;
+}
+
+input, select, button {
+    margin: 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+#message {
+    margin-top: 10px;
+    font-weight: bold;
+}
