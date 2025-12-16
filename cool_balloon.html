@@ -37,25 +37,25 @@ const bestScoreEl = document.getElementById('bestScore');
 
 let fontSize = 50;
 const minSize = 10;
-let maxSize = getRandomMaxSize(); // random max size
+let maxSize = getRandomMaxSize();
 let bestScore = 0;
 
-// Function to generate a random max size between 150px and 300px
+
 function getRandomMaxSize() {
-    return Math.floor(Math.random() * (300 - 150 + 1)) + 150;
+    return Math.floor(Math.random() * (400 - 150 + 1)) + 150;
 }
 
-// Update score display
+
 function updateScoreDisplay() {
     currentScoreEl.textContent = `Current Score: ${fontSize}`;
     bestScoreEl.textContent = `Best Score: ${bestScore}`;
 }
 
-// Initial display
+
 updateScoreDisplay();
 
 document.addEventListener('keydown', (e) => {
-    if (balloon.textContent === '💥') return; // already popped
+    if (balloon.textContent === '💥') return;
 
     if (e.key === 'ArrowUp') {
         fontSize += 10;
@@ -64,7 +64,7 @@ document.addEventListener('keydown', (e) => {
             popSound.currentTime = 0;
             popSound.play();
 
-            // Update best score
+            
             if (fontSize > bestScore) {
                 bestScore = fontSize;
             }
@@ -84,12 +84,12 @@ document.addEventListener('keydown', (e) => {
     updateScoreDisplay();
 });
 
-// Reset button
+
 resetBtn.addEventListener('click', () => {
     fontSize = 50;
     balloon.style.fontSize = fontSize + 'px';
     balloon.textContent = '🎈';
-    maxSize = getRandomMaxSize(); // new random max size
+    maxSize = getRandomMaxSize();
     updateScoreDisplay();
 });
 </script>
